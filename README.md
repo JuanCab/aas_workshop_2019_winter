@@ -60,9 +60,11 @@ If you already have python but not conda and do not wish to install conda, you w
 * scipy
 * aplpy
 ## Section 4: Test your environment
-The Python notebook test_imports.ipynb includes all relevant imports to test your environment.
+The Python notebook [test_imports.ipynb](https://github.com/NASA-NAVO/aas_workshop_2019_winter/blob/master/test_imports.ipynb) includes all relevant imports to test your environment.  
 
-To run this notebook, activate your NAVO environment and then run the following command from the same directory as the notebook:
+Using a web browser (or wget as above), download the [raw notebook file](https://raw.githubusercontent.com/NASA-NAVO/aas_workshop_2019_winter/master/test_imports.ipynb) and save it as `test_imports.ipynb`.  (Ensure that the file extension is `.ipynb` as the browser may try to save it as `.txt`.)
+
+To run this notebook, activate your NAVO environment (conda activate navo), then run the following command from the same directory as the notebook:
 
     jupyter notebook test_imports.ipynb
 
