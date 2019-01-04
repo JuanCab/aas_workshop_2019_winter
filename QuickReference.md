@@ -40,6 +40,7 @@ See http://docs.astropy.org/en/stable/table/ for more on working with Astropy Ta
 print(services.info)  # Show the number of rows and the column names.
 print(services)  # Default display of Astropy Table.
 print(services[:3]['short_name', 'reference_url'])  # Show first 3 short names and reference URLs.
+swiftuvot_services = services[services['short_name'] == 'SwiftUVOT'] # Filter the results by column value.
 
 # or in a Jupyter notebook
 services.show_in_notebook()  # Display an interactive table in the notebook.
@@ -70,6 +71,10 @@ image_results = image_results_list[0]  # List would be longer if list of service
 
 from astropy.utils.data import download_file
 local_path = download_file(image_results[0][ImageColumn.ACCESS_URL])
+
+# Or download to memory instead for display purposes.
+fits_images = image_results[image_results['contentType'] == 'image/fits']
+imagedata = Image.get_fits(fits_images[0])
 ```
 
 ## 2.4 Spectral search

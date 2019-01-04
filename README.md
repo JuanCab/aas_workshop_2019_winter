@@ -69,3 +69,12 @@ To run this notebook, activate your NAVO environment (conda activate navo), then
     jupyter notebook test_imports.ipynb
 
 The notebook should open in a browser window. Run the first cell by positioning your cursor in the cell and typing shift+enter. You should get no errors or output. 
+## Section 5:  Clone this repository
+To make use of the utility code and examples, you will need to clone this repository to your development area.
+
+    git clone https://github.com/NASA-NAVO/aas_workshop_2019_winter.git
+    cd aas_workshop_2019_winter
+
+Python code in the example notebooks as well as any new code run in this directory will be able to import and use the classes in the navo_utils directory.  So invoking Jupyter here makes it easy to get started.
+
+    jupyter notebook
