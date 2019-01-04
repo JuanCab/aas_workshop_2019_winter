@@ -6,6 +6,7 @@ VO Queries
 from __future__ import print_function, division
 #from IPython.core.debugger import Tracer
 from astroquery.query import BaseQuery
+from IPython.display import Markdown, display
 
 from . import utils
 
@@ -208,16 +209,18 @@ class RegistryClass(BaseQuery):
 
             return query
 
-
+    
+    def display_results(self, results):
+        # Display results in a readable way including the
+        # short_name, ivoid, res_description and reference_url.
+    
+        for row in results:
+            md = f"### {row['short_name']} ({row['ivoid']})"
+            display(Markdown(md))
+            print(row['res_description'])
+            print(f"More info: {row['reference_url']} ")
+            print(f"(Access URL: {row['access_url']} )")
+            
 Registry = RegistryClass()
 
 
-def display_results(results):
-    # Display results in a readable way including the
-    # short_name, ivoid, res_description and reference_url.
-
-    for row in results:
-        md = "{row['short_name']} ({})".format(row["ivoid"])
-        print(md)
-        print(row['res_description'])
-        print("(More info: {} )".format(row["reference_url"]))
